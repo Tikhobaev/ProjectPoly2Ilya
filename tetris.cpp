@@ -68,7 +68,6 @@ int startTetris()
 		{
 			if (e.type == Event::Closed)
 				window.close();
-
 			if (e.type == Event::KeyPressed)
 			if (e.key.code == Keyboard::Up) 
 				rotate = true;

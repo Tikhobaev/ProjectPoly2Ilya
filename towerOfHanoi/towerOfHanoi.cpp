@@ -78,7 +78,7 @@ void rules()
 
 void play()
 {
-	int from, to;
+	int from, to, moveCounter=-1;
 	node* source = NULL;
 	node* temporary = NULL;
 	node* destination = NULL;
@@ -96,7 +96,9 @@ void play()
 
 	while(!compare(result, destination))
 	{
+		moveCounter++;
 		system("cls");
+		printf("Move counter: %d\n\n", moveCounter);
 		display(source, temporary, destination);
 		if(error==1)
 			printf("This move is not allowed, please try again.\n\n");
@@ -216,7 +218,11 @@ void play()
 		}
 	}
 
+	moveCounter++;
+	system("cls\n\n");
+	display(source, temporary, destination);
 	printf("\nCongratulations, you won!\n\n");
+	printf("You made %d moves.\n\n", moveCounter);
 	system("pause");
 	menu();
 }

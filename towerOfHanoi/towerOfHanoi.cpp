@@ -216,6 +216,8 @@ void play()
 		}
 	}
 
+	system("cls");
+	display(source, temporary, destination);
 	printf("\nCongratulations, you won!\n\n");
 	system("pause");
 	menu();

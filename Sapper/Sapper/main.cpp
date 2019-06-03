@@ -6,10 +6,10 @@
 //  Copyright © 2019 Илья Соловьёв. All rights reserved.
 //
 
-#include <iostream>
+//#include <iostream>
+#include "sapper.hpp"
 
-int main(int argc, const char * argv[]) {
-    // insert code here...
-    std::cout << "Hello, World!\n";
+int main() {
+    game();
     return 0;
 }

@@ -68,6 +68,7 @@ int startTetris()
 		{
 			if (e.type == Event::Closed)
 				window.close();
+
 			if (e.type == Event::KeyPressed)
 			if (e.key.code == Keyboard::Up) 
 				rotate = true;
@@ -168,10 +169,26 @@ int startTetris()
 			s.move(28, 31); //offset
 			window.draw(s);
 		}
+		for (int i = 0; i < 2; i++){
+			for (int j = 0; j < 2; j++){
+				if (field[i][j]){
+					window.close();
+				}
+			}
+		}
 
 		window.draw(frame);
 		window.display();
 	}
-
+	RenderWindow finalWindow(VideoMode(320, 480), "Game over :(");
+	Texture t4;
+	t4.loadFromFile("images/gameOver.png");
+	Sprite gameOver(t4);
+	finalWindow.draw(gameOver);
+	finalWindow.display();
+	while (finalWindow.isOpen()){
+		finalWindow.draw(gameOver);
+		finalWindow.display();
+	}
 	return 0;
 }

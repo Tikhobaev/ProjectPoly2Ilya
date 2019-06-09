@@ -11,6 +11,6 @@
 
 #include <stdio.h>
 
-void game();
+bool game();
 
 #endif /* sapper_hpp */

@@ -78,7 +78,7 @@ int main() {
                 for (int i=0;i<num_games;i++){
                     if (time_game[i]!=-1)
                     {
-                        cout<<i+1<<") "<<time_game[i]<<endl;
+                        cout<<i+1<<") "<<time_game[i]<<" sec"<<endl;
                     }
                     else
                     {

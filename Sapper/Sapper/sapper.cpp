@@ -13,7 +13,7 @@ using namespace std;
 #include "sapper.hpp"
 
 const int N=10;
-const int NUMBOMBS=1;
+const int NUMBOMBS=N;
 bool field_hidden[N][N];
 int field[N][N];
 bool visited[N][N];
@@ -85,7 +85,7 @@ void start_game(){
 }
 
 void show_field(int c){
-    //system("clear");
+    system("clear");
     cout<<"   ";
     for (int i=0;i<N;i++){
         cout<<i+1<<" ";
@@ -197,14 +197,14 @@ bool game(){
     }while ((shot(x,y))&&(check_end_game()));
     
     if (!check_end_game()){
-            cout<<"YOU WON"<<endl;
             show_field(0);
+        cout<<endl<<"YOU WON :)"<<endl<<endl;
             return true;
         }
             else
         {
-            cout<<"GAME OVER"<<endl;
             show_field(0);
+            cout<<endl<<"GAME OVER :("<<endl<<endl;
             return false;
         }
 }

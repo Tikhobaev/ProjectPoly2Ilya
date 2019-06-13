@@ -66,8 +66,10 @@ int startTetris()
 		Event e;
 		while (window.pollEvent(e))
 		{
-			if (e.type == Event::Closed)
+			if (e.type == Event::Closed){
 				window.close();
+				return 0;
+			}
 
 			if (e.type == Event::KeyPressed)
 			if (e.key.code == Keyboard::Up) 
@@ -169,11 +171,9 @@ int startTetris()
 			s.move(28, 31); //offset
 			window.draw(s);
 		}
-		for (int i = 0; i < 2; i++){
-			for (int j = 0; j < 2; j++){
-				if (field[i][j]){
-					window.close();
-				}
+		for (int j = 0; j < N; j++){
+			if (field[0][j]){
+				window.close();
 			}
 		}
 
@@ -186,9 +186,15 @@ int startTetris()
 	Sprite gameOver(t4);
 	finalWindow.draw(gameOver);
 	finalWindow.display();
-	while (finalWindow.isOpen()){
-		finalWindow.draw(gameOver);
-		finalWindow.display();
+
+	while (finalWindow.isOpen())
+	{
+		sf::Event event;
+		while (finalWindow.pollEvent(event))
+		{
+			if (event.type == sf::Event::Closed)
+				finalWindow.close();
+		}
 	}
 	return 0;
 }
